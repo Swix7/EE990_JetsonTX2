@@ -1,0 +1,44 @@
+movie_input: 'lax.mp4'    # mp4 or avi. Movie file.
+
+force_gpu_compatible: True # If True with visualize False, speed up. Forces all CPU tensors to be allocated with Cuda pinned memory.
+save_to_file: False         # movie or camera: ./output_movie/output_unixtime.avi. Save it in avi format to prevent compression degradation. Requires a lot of disk space.    # image: ./output_image/PATH_TO_FILE. Save it in image file.
+visualize: True             # True: Show result image. False: Without image show.
+vis_worker: False           # True: Visualization run on process. (With visuzalize:True)
+max_vis_fps: 0              # >=1: Limit of show fps. 0: No limit - means try to spend full machine power for visualization. (With visualize:True.)
+vis_text: True              # Display fps on result image. (With visualize:True.)
+max_frames: 0            # >=1: Quit when frames done. 0: no exit. (With visualize:False)
+width: 1280                  # Camera width.
+height: 720                 # Camera height.
+fps_interval: 7             # FPS console out interval and FPS stream length.
+det_interval: 1           # intervall [frames] to print detections to console
+det_th: 0.5                 # detection threshold for det_intervall
+worker_threads: 4           # parallel detection for Mask R-CNN.
+log_device: False           # Logs GPU / CPU device placement
+allow_memory_growth: True   # limits memory allocation to the actual needs
+debug_mode: False           # Show FPS spike value
+label_path: 'models/labels/mscoco_label_map.pbtxt' # default: mscoco 90 classes
+split_shape: 3000           # 1917, 3000, 3309, 5118, 7326, 51150. ExpandDims_1's shape.
+num_classes: 90
+device: Device.desktop
+
+# IMPLEMENTABLE MODELS
+# mask_rcnn_resnet50_atrous_coco_2018_01_28
+# faster_rcnn_resnet50_coco
+
+# NEW DIR will be created.
+# ./data/ - download model. it has checkpoint.
+# ./logs/ - Graph diagram for tensorboard.
+
+# NEW FROZEN FILE will be created.
+# ./data/ssd_mobilenet_v1_coco_2017_11_17_trt_FP16.pb
+
+# PRECISION MODEL
+# https://devtalk.nvidia.com/default/topic/1023708/gpu-accelerated-libraries/fp16-support-on-gtx-1060-and-1080/
+# FP16 for Jetson TX2.
+# FP32 for desktop or server with GPUs.
+
+model_type: 'trt_v1'
+precision_model: 'FP32'     # 'FP32', 'FP16'
+model: 'faster_rcnn_resnet50_coco'
+
+
