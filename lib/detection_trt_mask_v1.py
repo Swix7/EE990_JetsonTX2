@@ -114,12 +114,9 @@ class TRTV1():
         """ """ """ """ """ """ """ """ """ """ """
         START CAMERA
         """ """ """ """ """ """ """ """ """ """ """
-        if SRC_FROM == CAMERA:
-            from lib.webcam import WebcamVideoStream as VideoReader
-        elif SRC_FROM == MOVIE:
-            from lib.video import VideoReader
-        elif SRC_FROM == IMAGE:
-            from lib.image import ImageReader as VideoReader
+
+        from lib.video import VideoReader
+
         video_reader = VideoReader()
 
 
