@@ -8,6 +8,6 @@ Project focused on implenting and profiling [Faster RCNN](https://arxiv.org/pdf/
 
 The video used for testing the networks can be found [here](https://www.videvo.net/video/los-angeles-busy-freeway/5130/).
 
-Videos of the results from both the desktop and Jetson TX2 implementation can be found [here](https://www.dropbox.com/sh/9ldl26pslppua2x/AADdtbk6nDuQsqumnQv0KvJYa?dl=0) along with the report to go along with this project.
+<Videos of the results from both the desktop and Jetson TX2 implementation can be found [here](https://www.dropbox.com/sh/9ldl26pslppua2x/AADdtbk6nDuQsqumnQv0KvJYa?dl=0) along with the report to go along with this project.>
 
 The `.config` files in the root directory are the ones which were used when converting the graph from TF -> TRT.
